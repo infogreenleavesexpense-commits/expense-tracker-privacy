@@ -1,23 +1,523 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Privacy Policy - Expense Tracker</title>
-    <style>body { font-family: sans-serif; line-height: 1.6; padding: 40px; max-width: 800px; margin: auto; }</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Green Leaves: Receipt & Expense Tracker - Your privacy-focused expense management app">
+    <title>Privacy Policy - Green Leaves: Receipt & Expense Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #4a9b6d;
+            --color-primary-dark: #3a7a56;
+            --color-accent: #6bc491;
+            --color-bg: #fdfdfb;
+            --color-surface: #ffffff;
+            --color-text: #2d3436;
+            --color-text-light: #636e72;
+            --color-border: #e3e8e4;
+            --color-highlight: #f0f7f3;
+            --font-serif: 'Crimson Pro', serif;
+            --font-sans: 'Work Sans', sans-serif;
+            --shadow-sm: 0 2px 8px rgba(74, 155, 109, 0.08);
+            --shadow-md: 0 4px 16px rgba(74, 155, 109, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            color: var(--color-text);
+            background: var(--color-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h60v60H0z" fill="none"/><path d="M30 15l-5 10h10z" fill="rgba(255,255,255,0.03)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1.5rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+
+        .header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 400;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: -2rem auto 4rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Main Card */
+        .card {
+            background: var(--color-surface);
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            padding: 3rem;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: var(--color-highlight);
+            color: var(--color-primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        /* Privacy Badge */
+        .privacy-badge {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid var(--color-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .privacy-badge-icon {
+            font-size: 2rem;
+        }
+
+        .privacy-badge-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--color-primary-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .privacy-badge-content p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.5;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 1.9rem;
+            color: var(--color-primary-dark);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        h2:first-of-type {
+            margin-top: 1.5rem;
+        }
+
+        h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--color-text);
+            margin: 1.5rem 0 0.75rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        strong, b {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .data-table th {
+            background: var(--color-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover td {
+            background: var(--color-highlight);
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        ul li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: var(--color-text-light);
+        }
+
+        ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        /* Links */
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+            border-bottom-color: var(--color-primary-dark);
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: var(--color-highlight);
+            border-left: 4px solid var(--color-accent);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+        }
+
+        .info-box strong {
+            color: var(--color-primary-dark);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-section h2 {
+            color: white;
+            border: none;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .contact-section p {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 1rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            background: white;
+            color: var(--color-primary);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: none;
+        }
+
+        .email-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header .subtitle {
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .data-table {
+                font-size: 0.9rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .card {
+                padding: 1.5rem 1rem;
+            }
+
+            .privacy-badge {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p>Last Updated: February 2026</p>
-    
-    <h2>1. Data Collection</h2>
-    <p>Our app uses the <b>Camera</b> and <b>Storage</b> permissions solely to allow users to scan and save images of receipts. These images are processed locally on your device.</p>
+    <header class="header">
+        <div class="header-content">
+            <img src="green_leaves-logo.png" alt="Green Leaves Logo" class="logo">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Green Leaves: Receipt & Expense Tracker</p>
+        </div>
+    </header>
 
-    <h2>2. Advertising</h2>
-    <p>We use <b>Google AdMob</b> to serve advertisements. AdMob may collect and use personal data (such as advertising IDs) to personalize ads and analyze traffic. You can find Google’s policy here: <a href="https://policies.google.com/privacy">Google Privacy & Terms</a>.</p>
+    <div class="container">
+        <div class="card">
+            <div class="last-updated">📅 Last Updated: February 6, 2026</div>
 
-    <h2>3. Security</h2>
-    <p>We do not sell or share your personal data with third parties, except as required for the functionality of the advertising services mentioned above.</p>
+            <div class="privacy-badge">
+                <div class="privacy-badge-icon">🔒</div>
+                <div class="privacy-badge-content">
+                    <h3>Your Privacy is Our Priority</h3>
+                    <p>We operate on an <strong>Offline-First</strong> basis. Your personal financial data is stored locally on your device and is never transmitted to our servers.</p>
+                </div>
+            </div>
 
-    <h2>4. Contact Us</h2>
-    <p>If you have questions, contact us at: infogreenleavesexpense@gmail.com</p>
+            <h2>1. Introduction</h2>
+            <p>This Privacy Policy explains how <strong>Green Leaves: Receipt & Expense Tracker</strong> ("we", "us", or "our") collects, uses, and discloses information about you when you use our mobile application (the "App"). We are committed to protecting your privacy and ensuring you have full control over your financial data.</p>
+            
+            <div class="info-box">
+                <p><strong>Core Privacy Principle:</strong> We operate on an "Offline-First" basis. Your personal financial data (expenses, receipts, categories) is stored locally on your device and is not transmitted to our servers.</p>
+            </div>
+
+            <h2>2. Information We Collect</h2>
+            
+            <h3>A. Information You Provide</h3>
+            <ul>
+                <li><strong>Expense Data:</strong> Amounts, dates, merchant names, categories, and descriptions you enter manually.</li>
+                <li><strong>Receipt Images:</strong> Photos of receipts you capture via the camera or import from your gallery.</li>
+                <li><strong>Preferences:</strong> Settings such as currency, dark mode, and notification preferences.</li>
+            </ul>
+
+            <h3>B. Automatically Collected Information</h3>
+            <ul>
+                <li><strong>Device Information:</strong> Device model, OS version, and general diagnostic data to ensure app stability.</li>
+                <li><strong>Crash Logs:</strong> Anonymous crash reports (via Google Play Console) to help us fix bugs.</li>
+                <li><strong>Ad Data:</strong> If you use the free version, our advertising partner (Google AdMob) may collect device identifiers (advertising ID) to serve non-personalized or personalized ads based on your consent.</li>
+            </ul>
+
+            <h2>3. How We Use Your Information</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Purpose</th>
+                        <th>Processing Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Receipt Images</strong></td>
+                        <td>To extract text (Amount, Date, Merchant) using Optical Character Recognition (OCR).</td>
+                        <td>On-Device Only (via Google ML Kit). Images are NOT uploaded to our servers.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial Data</strong></td>
+                        <td>To organize your expenses, generate charts, and calculate totals.</td>
+                        <td>On-Device Only (Stored in local Room Database).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Advertising ID</strong></td>
+                        <td>To display relevant advertisements in the free version.</td>
+                        <td>Processed by Google AdMob.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Purchase History</strong></td>
+                        <td>To verify your Premium Subscription status.</td>
+                        <td>Processed by Google Play Billing.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>4. Permissions We Request</h2>
+            <ul>
+                <li><strong>CAMERA:</strong> Required solely to capture photos of receipts for scanning.</li>
+                <li><strong>POST_NOTIFICATIONS:</strong> Required to send you local reminders to log your expenses. You can disable this in device settings.</li>
+                <li><strong>INTERNET:</strong> Required for:
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Loading advertisements (AdMob).</li>
+                        <li>Verifying subscriptions (Google Play Billing).</li>
+                        <li>Downloading crash reports (Play Console).</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <div class="info-box">
+                <p><strong>Note:</strong> Your expense data is NOT sent over the internet.</p>
+            </div>
+
+            <h2>5. Third-Party Services</h2>
+            <p>We use the following third-party services which have their own privacy policies:</p>
+            <ul>
+                <li><strong>Google Play Services:</strong> For core app functionality.</li>
+                <li><strong>Google AdMob:</strong> For displaying advertisements. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                <li><strong>Google ML Kit:</strong> For on-device text recognition. Data is processed locally. <a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener">Privacy Policy</a></li>
+            </ul>
+
+            <h2>6. Data Retention & Deletion</h2>
+            <ul>
+                <li><strong>Retention:</strong> Since data is stored locally, it remains on your device as long as the App is installed.</li>
+                <li><strong>Deletion:</strong> You can delete all your data by simply uninstalling the App or clearing the App storage in system settings.</li>
+                <li><strong>Backup:</strong> If you use the "Export to CSV" feature, the exported file is under your control and subject to your own management.</li>
+            </ul>
+
+            <h2>7. Children's Privacy</h2>
+            <p>Our App is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+
+            <h2>8. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+
+            <div class="contact-section">
+                <h2>9. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                <a href="mailto:infogreenleavesexpense@gmail.com" class="email-link">infogreenleavesexpense@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 Green Leaves: Receipt & Expense Tracker. All rights reserved.</p>
+    </footer>
 </body>
 </html>
